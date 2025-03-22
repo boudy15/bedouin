@@ -22,7 +22,7 @@ function countVowels(str: string): number {
   
     
     for (let i = 0; i < str.length; i++) {
-      const char = str[i].toLowerCase(); // lowercase to Detect capital letters too
+      const char = str[i].toLowerCase(); // lowercase to apply for capital and lower case letters
       if (vowels.includes(char)) {
         count++;
       }
@@ -92,7 +92,9 @@ function deepEqual(obj1, obj2) {
 console.log(deepEqual({ a: 1, b: { c: 2 } }, { a: 1, b: { c: 2 } })); // true
 console.log(deepEqual({ a: 1, b: { c: 2 } }, { a: 1, b: { c: 3 } })); // false
 console.log(deepEqual({ a: 1, b: { c: 3 } }, { a: 1, b: { c: 3 } })); // true
-console.log(deepEqual({ a: 1, b: { c: 3 } }, { a: 1, b: { c: 10 } })); // false
+console.log(deepEqual({ a: 1, b: { c: 3 } }, { a: 1, b: { c: 100 } })); // false
+console.log(deepEqual({ a: 1, b: { c: 80 } }, { a: 1, b: { c: 79 } })); // false
+console.log(deepEqual({ a: 1, b: { c: 300 } }, { a: 1, b: { c: 300 } })); //true
 
 //6)i use javascript
 class LRUCache {
@@ -174,9 +176,10 @@ const taskManager = new TaskManager();
 taskManager.addTask("Learn TypeScript");
 taskManager.addTask("Complete Assignment");
 
-// Adding 2 new tasks
-taskManager.addTask("Go for a walk");
-taskManager.addTask("Read a book");
+// Adding tasks
+taskManager.addTask("Finish eurisko Assignment");
+taskManager.addTask("Finishing the report of my senior project");
+taskManager.addTask("Take my dog for a walk");
 taskManager.completeTask(1); 
 taskManager.displayTasks(); 
 
